@@ -31,25 +31,9 @@ Below are the images found in `screenshot_and_videos/` included with the project
 If you add more screenshots or renamed files, update the paths above accordingly.
 
 ## Demo video
+![Demo](screenshot_and_videos\working_proof_video.mp4)
 
-A demo video was detected in `screenshot_and_videos/` and is embedded below so you can preview the visualizer in action.
 
-<video controls width="720">
-  <source src="screenshot_and_videos/working_proof_video.avi" type="video/x-msvideo">
-  Your browser may not support playing AVI files directly. If the video does not play in your browser, convert it to MP4 for broad compatibility (example command below).
-</video>
-
-Recommended: convert to MP4 for maximum browser compatibility. If you have `ffmpeg` installed, run this in PowerShell from the repository root:
-
-```powershell
-ffmpeg -i screenshot_and_videos/working_proof_video.avi -c:v libx264 -crf 23 -preset medium screenshot_and_videos/demo.mp4
-```
-
-Once you have `demo.mp4` in the folder, replace the `source` above with `screenshot_and_videos/demo.mp4` and most browsers will play the file natively.
-
-Or host the demo video externally and link to it (YouTube/Vimeo):
-
-[Watch demo on YouTube](https://www.youtube.com/)
 
 ## Quickstart (Windows PowerShell)
 
@@ -92,12 +76,6 @@ git rm -r --cached . ; git add . ; git commit -m "Apply .gitignore and update RE
 
 This will remove cached files from the index while keeping them locally.
 
-## Project contract (small)
-
-- Input: user interacts with UI to generate arrays and control playback
-- Output: animated heap construction and sorting visualizations with explanatory highlights
-- Error modes: missing media files will simply not display; server port in use will show an error
-
 ## Edge cases to consider
 
 - Empty array: UI should handle gracefully (no crash)
@@ -107,12 +85,3 @@ This will remove cached files from the index while keeping them locally.
 ## License
 
 MIT — see `LICENSE` (or add one if missing).
-
----
-
-If you want, I can also:
-
-- Auto-detect and embed any `.mp4`/`.webm` files in `screenshot_and_videos/` into this README
-- Create a small `README-assets` script that generates the screenshots list automatically
-
-Tell me which you'd prefer and I'll implement it.
