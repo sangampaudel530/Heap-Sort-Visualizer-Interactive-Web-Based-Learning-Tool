@@ -28,6 +28,11 @@ An interactive, web-based **Heap Sort visualizer** with animations and step-by-s
 
 ---
 
+## 🎬 Demo Video
+https://github.com/user-attachments/assets/3fcf2194-958a-4ec0-8202-00fe01811b87
+
+---
+
 ## 🖼 Screenshots
 
 ![Screenshot 1](screenshot_and_videos/screenshot1.png)
@@ -99,6 +104,4 @@ git push
 
 MIT
 
-
-## 🎬 Demo Video
 
