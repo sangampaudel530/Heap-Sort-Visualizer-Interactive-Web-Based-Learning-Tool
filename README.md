@@ -41,9 +41,6 @@ An interactive, web-based **Heap Sort visualizer** with animations and step-by-s
 
 ---
 
-## 🎬 Demo Video
-https://github.com/user-attachments/assets/399be28e-4fd9-4465-97d8-1d26a4e0fccf
-
 
 ## ⚡ Quickstart (Windows PowerShell)
 
@@ -81,10 +78,6 @@ npm run start
 
 ---
 
-## 💡 Git Notes
-
-If you have files that should be ignored (like `.venv/`) already committed:
-
 ```powershell
 git rm -r --cached .
 git add .
@@ -107,4 +100,5 @@ git push
 MIT
 
 
+## 🎬 Demo Video
 
