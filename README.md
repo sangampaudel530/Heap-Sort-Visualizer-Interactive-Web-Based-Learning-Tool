@@ -32,14 +32,22 @@ If you add more screenshots or renamed files, update the paths above accordingly
 
 ## Demo video
 
-No demo video file was detected in `screenshot_and_videos/` at the time this README was generated. To include a video named `demo.mp4`, place it in `screenshot_and_videos/` and embed it like this:
+A demo video was detected in `screenshot_and_videos/` and is embedded below so you can preview the visualizer in action.
 
 <video controls width="720">
-	<source src="screenshot_and_videos/demo.mp4" type="video/mp4">
-	Your browser does not support the video tag.
+  <source src="screenshot_and_videos/working_proof_video.avi" type="video/x-msvideo">
+  Your browser may not support playing AVI files directly. If the video does not play in your browser, convert it to MP4 for broad compatibility (example command below).
 </video>
 
-Or link to a hosted video (YouTube/Vimeo):
+Recommended: convert to MP4 for maximum browser compatibility. If you have `ffmpeg` installed, run this in PowerShell from the repository root:
+
+```powershell
+ffmpeg -i screenshot_and_videos/working_proof_video.avi -c:v libx264 -crf 23 -preset medium screenshot_and_videos/demo.mp4
+```
+
+Once you have `demo.mp4` in the folder, replace the `source` above with `screenshot_and_videos/demo.mp4` and most browsers will play the file natively.
+
+Or host the demo video externally and link to it (YouTube/Vimeo):
 
 [Watch demo on YouTube](https://www.youtube.com/)
 
