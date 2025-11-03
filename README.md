@@ -28,13 +28,10 @@ Below are the images found in `screenshot_and_videos/` included with the project
 
 ![Screenshot 3](screenshot_and_videos/screenshot3.png)
 
-If you add more screenshots or renamed files, update the paths above accordingly.
-
 ## Demo video
-<video controls width="720">
-  <source src="screenshot_and_videos/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag. <a href="screenshot_and_videos/demo.mp4">Download the demo</a>
-</video>
+
+[![Watch the video](screenshot_and_videos/thumbnail.png)](screenshot_and_videos/working_proof_video.mp4)
+
 
 ## Quickstart (Windows PowerShell)
 
