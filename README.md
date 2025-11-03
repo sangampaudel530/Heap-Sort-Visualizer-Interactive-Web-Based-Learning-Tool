@@ -31,18 +31,19 @@ An interactive, web-based **Heap Sort visualizer** with animations and step-by-s
 ## 🖼 Screenshots
 
 ![Screenshot 1](screenshot_and_videos/screenshot1.png)
+
+---
+
 ![Screenshot 2](screenshot_and_videos/screenshot2.png)
+
+---
 ![Screenshot 3](screenshot_and_videos/screenshot3.png)
 
 ---
 
 ## 🎬 Demo Video
+https://github.com/user-attachments/assets/399be28e-4fd9-4465-97d8-1d26a4e0fccf
 
-[![Watch Demo Video](screenshot_and_videos/thumbnail.png)](https://github.com/sangampaudel/heap-sort-visualizer/releases/download/v1.0/working_proof_video.mp4)
-
-> Click the image above to watch the working proof video of the Heap Sort Visualizer.
-
----
 
 ## ⚡ Quickstart (Windows PowerShell)
 
@@ -105,6 +106,5 @@ git push
 
 MIT
 
-https://github.com/user-attachments/assets/399be28e-4fd9-4465-97d8-1d26a4e0fccf
 
 
