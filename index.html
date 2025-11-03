@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heap Sort Visualizer - Interactive DSA Learning Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Intro/Welcome Page -->
+    <div id="introPage" class="intro-page">
+        <div class="intro-content">
+            <div class="intro-header">
+                <h1>🌳 Heap Sort Visualizer</h1>
+                <p class="intro-subtitle">Interactive Data Structures & Algorithms Learning Tool</p>
+            </div>
+            
+            <div class="intro-description">
+                <h2>Welcome to Heap Sort Visualizer!</h2>
+                <p>Learn and understand Heap Sort algorithm through interactive visualizations. Watch how a binary heap works in real-time with beautiful animations.</p>
+            </div>
+
+            <div class="intro-operations">
+                <h2>📚 Available Operations</h2>
+                <div class="operations-grid">
+                    <div class="operation-card">
+                        <div class="operation-icon">➕</div>
+                        <h3>Insert</h3>
+                        <p>Add elements to the heap and watch it maintain the heap property automatically</p>
+                    </div>
+                    <div class="operation-card">
+                        <div class="operation-icon">🗑️</div>
+                        <h3>Delete Root</h3>
+                        <p>Remove the maximum element (root) and see the heap rebuild itself</p>
+                    </div>
+                    <div class="operation-card">
+                        <div class="operation-icon">🏗️</div>
+                        <h3>Build Heap</h3>
+                        <p>Convert an unordered array into a proper max heap structure</p>
+                    </div>
+                    <div class="operation-card">
+                        <div class="operation-icon">🔄</div>
+                        <h3>Heap Sort</h3>
+                        <p>Sort the array using heap sort algorithm with O(n log n) complexity</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-features">
+                <h2>✨ Features</h2>
+                <ul class="features-list">
+                    <li>🎨 Beautiful animated visualizations</li>
+                    <li>🌳 Interactive heap tree structure</li>
+                    <li>📊 Real-time statistics (comparisons, swaps)</li>
+                    <li>⚡ Adjustable animation speed</li>
+                    <li>🎮 Step-by-step controls</li>
+                    <li>📈 Color-coded operations</li>
+                </ul>
+            </div>
+
+            <div class="intro-button-container">
+                <button id="startBtn" class="start-button">
+                    <span>Get Started</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+            <p class="intro-credit">Designed by Sangam Paudel (080BCT073)</p>
+        </div>
+    </div>
+
+    <!-- Main Application (Hidden Initially) -->
+    <div id="mainApp" class="container" style="display: none;">
+        <div class="main-controls-top">
+            <button id="backBtn" class="btn btn-secondary compact">← Back to Home</button>
+        </div>
+        <div class="app-grid">
+            <div class="left-column">
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <div class="control-section">
+                        <h3>Array Operations</h3>
+                        <div class="input-group">
+                            <input type="number" id="insertValue" placeholder="Enter value" min="0" max="999">
+                            <button id="insertBtn" class="btn btn-primary compact">Insert</button>
+                        </div>
+                        <div class="input-group">
+                            <button id="deleteBtn" class="btn btn-danger compact">Delete Root</button>
+                            <button id="clearBtn" class="btn btn-secondary compact">Clear All</button>
+                        </div>
+                    </div>
+
+                    <div class="control-section">
+                        <h3>Heap Operations</h3>
+                        <button id="buildHeapBtn" class="btn btn-success compact">Build Max Heap</button>
+                        <button id="heapSortBtn" class="btn btn-primary compact">Heap Sort</button>
+                        <button id="resetBtn" class="btn btn-warning compact">Reset</button>
+                    </div>
+
+                    <div class="control-section">
+                        <h3>Animation Controls</h3>
+                        <div class="speed-control">
+                            <label>Speed:</label>
+                            <input type="range" id="speedSlider" min="1" max="10" value="5">
+                            <span id="speedValue">5</span>
+                        </div>
+                        <div class="animation-controls">
+                            <button id="playPauseBtn" class="btn btn-info compact">Play</button>
+                            <button id="stepBtn" class="btn btn-secondary compact">Step Forward</button>
+                            <button id="prevStepBtn" class="btn btn-secondary compact">Step Back</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- (stats moved to combined visualization on the right) -->
+            </div>
+
+            <div class="right-column">
+                <!-- Combined Visualization Section: tree + stats/operation + array values -->
+                <div class="viz-combined">
+                    <div class="viz-card">
+                        <div class="viz-header">
+                            <h2>Heap Tree</h2>
+                        </div>
+                        <div class="canvas-wrapper viz-canvas">
+                            <canvas id="treeCanvas"></canvas>
+                        </div>
+
+                        <div class="viz-info-row">
+                            <div class="stats-inline">
+                                <div class="stat-item">
+                                    <span class="stat-label">Array Size:</span>
+                                    <span class="stat-value" id="arraySize">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Comparisons:</span>
+                                    <span class="stat-value" id="comparisons">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Swaps:</span>
+                                    <span class="stat-value" id="swaps">0</span>
+                                </div>
+                            </div>
+                            <div class="current-op">
+                                <span class="stat-label">Operation:</span>
+                                <span class="stat-value" id="currentOp">Ready</span>
+                            </div>
+                        </div>
+
+                        <div class="array-display compact-array">
+                            <h3>Array Values</h3>
+                            <div id="arrayDisplay" class="array-values"></div>
+                        </div>
+                    </div>
+
+                    <footer id="appFooter" class="app-footer">Designed by Sangam Paudel (080BCT073)</footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="heap.js"></script>
+    <script src="visualizer.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
